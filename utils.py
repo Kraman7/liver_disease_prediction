@@ -2,7 +2,8 @@
 import pickle
 
 # Load the pickled model
-with open("liver.pkl", "rb") as f:
+path = r"F:\velocity_classs\Assignment\DATA_FOLDER\Liver\Liver\workspace\liver_disease_prediction\artifacts\liver.pkl"
+with open(path, "rb") as f:
     model = pickle.load(f)
 
 def predict_liver_disease(gender, age, tb, db, alkphos, sgpt, sgot, tp, alb, ag_ratio):
