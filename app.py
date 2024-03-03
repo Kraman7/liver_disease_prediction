@@ -7,7 +7,8 @@ from config import port_number
 app = Flask(__name__)
 
 # Load the pre-trained model
-with open('liver.pkl', 'rb') as f:
+PATH = r"F:\velocity_classs\Assignment\DATA_FOLDER\Liver\Liver\workspace\liver_disease_prediction\artifacts\liver.pkl"
+with open(PATH, 'rb') as f:
     model = pickle.load(f)
 
 # Define homepage API
