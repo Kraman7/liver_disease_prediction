@@ -1,9 +1,10 @@
 #utils file
 import pickle
+import config
 
 # Load the pickled model
-path = r"F:\velocity_classs\Assignment\DATA_FOLDER\Liver\Liver\workspace\liver_disease_prediction\artifacts\liver.pkl"
-with open(path, "rb") as f:
+model_file_path = config.MODEL_FILE_PATH
+with open(model_file_path, "rb") as f:
     model = pickle.load(f)
 
 def predict_liver_disease(gender, age, tb, db, alkphos, sgpt, sgot, tp, alb, ag_ratio):
