@@ -2,13 +2,13 @@
 
 from flask import Flask, request, render_template
 import pickle
-from config import port_number
+import config
 
 app = Flask(__name__)
 
 # Load the pre-trained model
-PATH = r"F:\velocity_classs\Assignment\DATA_FOLDER\Liver\Liver\workspace\liver_disease_prediction\artifacts\liver.pkl"
-with open(PATH, 'rb') as f:
+model_file_path = config.MODEL_FILE_PATH
+with open(model_file_path, 'rb') as f:
     model = pickle.load(f)
 
 # Define homepage API
@@ -44,4 +44,4 @@ def predict():
     return render_template('index.html', prediction=result)
 
 if __name__ == '__main__':
-    app.run(port=port_number, debug=False)
+    app.run(port=config.port_number, debug=False)
