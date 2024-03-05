@@ -2,12 +2,12 @@
 
 from flask import Flask, request, render_template
 import pickle
-import config
+from config import port_number
 
 app = Flask(__name__)
 
 # Load the pre-trained model
-model_file_path = config.MODEL_FILE_PATH
+model_file_path = r"artifacts\liver.pkl"
 with open(model_file_path, 'rb') as f:
     model = pickle.load(f)
 
@@ -44,4 +44,4 @@ def predict():
     return render_template('index.html', prediction=result)
 
 if __name__ == '__main__':
-    app.run(port=config.port_number, debug=False)
+    app.run(port=port_number, debug=False)
