@@ -7,7 +7,7 @@ from config import port_number
 app = Flask(__name__)
 
 # Load the pre-trained model
-model_file_path = r"artifacts\liver.pkl"
+model_file_path = r"liver.pkl"
 with open(model_file_path, 'rb') as f:
     model = pickle.load(f)
 
