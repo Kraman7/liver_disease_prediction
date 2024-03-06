@@ -3,7 +3,7 @@ import pickle
 import config
 
 # Load the pickled model
-model_file_path = config.MODEL_FILE_PATH
+model_file_path = r"liver.pkl"
 with open(model_file_path, "rb") as f:
     model = pickle.load(f)
 
